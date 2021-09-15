@@ -1,0 +1,6 @@
+module Pods_VimbuTestApp {
+  umbrella header "Pods-VimbuTestApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
