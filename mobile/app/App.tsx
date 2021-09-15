@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
+// import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -24,10 +24,10 @@ import {
 
 export default function App () {
   return (
-    // <NavigationContainer>
-    //   {/* <SafeAreaView> */}
-    //     <MainRouter/>
-    //   {/* </SafeAreaView> */}
-    // </NavigationContainer>
+    <NavigationContainer>
+      {/* <SafeAreaView> */}
+        <MainRouter/>
+      {/* </SafeAreaView> */}
+    </NavigationContainer>
   );
 };

@@ -9,7 +9,6 @@ import {View, Text} from 'react-native';
 interface Props {};
 
 const InstructorsList: React.FC<Props> = ({}) => {
-  return null
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.text}>
