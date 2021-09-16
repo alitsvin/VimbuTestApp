@@ -4,56 +4,58 @@ import {StyleSheet} from 'react-native';
 /* components */
 import {View, Text, TouchableOpacity} from 'react-native';
 import InstructorsCarousel from './components/InstructorsCarousel';
+import GradientCircle from './components/GradientBackground';
 
 /* hooks */
-import {useEffect, useState} from 'react';
+import {useInstructors} from './hooks/useInstructors';
 
-/* types */
-import {Instructor} from '@types';
+/* ui */
+import {colors, SCREEN_WIDTH} from '@ui';
 
-interface Props {};
 
-export default function InstructorsList ({}: Props): JSX.Element {
-  const [instructors, setInstructors] = useState<Array<Instructor>>([]);
-  const [error, setError] = useState<null|string>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+const circleSize = 800;
+const circleVisibleHeight = 300;
 
-  useEffect(() => {
-    (async function fetchData () {
-      setLoading(true);
-      try {
-        const response = await fetch('http://localhost:3000/instructors');
-        const data = await response.json();
-        console.log(data);
-        setInstructors(data);
+export default function InstructorsList (): JSX.Element {
+  const [instructors, loading, error] = useInstructors();
 
-      } catch (e) {
-        console.log('error', e);
-        setError(e.message || e);
-        setInstructors([]);
-      }
-
-      setLoading(false);
-    })();
-  }, []);
-  
   return (
     <View style={styles.mainContainer}>
       <Header/>
-      <InstructorsCarousel
-        data={instructors}
-      />
+      <Title/>
+      {instructors.length > 0 ? (
+        <InstructorsCarousel data={instructors}/>
+      ) : (
+        <Text>There are no any available instructors for now :(</Text>
+      )}
+
+      <BackgroundCircle/>
     </View>
   );
 }
 
-const Header: React.FC = () => {
+function Header (): JSX.Element {
   return (
     <View style={styles.header}>
-      <TouchableOpacity>
-        
-      </TouchableOpacity>
+      <TouchableOpacity/>
     </View>
+  );
+}
+
+function BackgroundCircle (): JSX.Element {
+  return (
+    <GradientCircle
+      size={circleSize}
+      style={styles.backgroundCircle}
+    />
+  );
+}
+
+function Title (): JSX.Element {
+  return (
+    <Text style={styles.title}>
+      Choose Your Instructor
+    </Text>
   );
 }
 
@@ -61,15 +63,23 @@ const Header: React.FC = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    justifyContent: 'flex-start',
   },
-  text: {
-    color: '#999999',
-  },
-
   header: {
     flex: 0,
     height: 60,
     width: '100%',
+  },
+  title: {
+    alignSelf: 'center',
+    color: colors.textLight,
+    fontSize: 21,
+    marginVertical: 10,
+  },
+  backgroundCircle: {
+    position: 'absolute',
+    zIndex: -1,
+    borderRadius: circleSize / 2,
+    top: -(circleSize - circleVisibleHeight),
+    left: -(circleSize - SCREEN_WIDTH) / 2
   },
 });
