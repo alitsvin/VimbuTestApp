@@ -8,11 +8,20 @@ import {View} from 'react-native';
 interface Props {
   style?: ViewStyle | Array<ViewStyle>;
   size?: number;
+  colors?: Array<string>;
+  stops?: Array<number>;
 };
 
 const circleSize = 200;
+const defaultColors = ['#94dfe0', '#07b8e9'];
+const defaultStops = [0.3, 1];
 
-export default function GradientCircle ({style, size = circleSize}: Props): JSX.Element {
+export default function GradientCircle ({
+  style,
+  size = circleSize,
+  colors = defaultColors,
+  stops = defaultStops,
+}: Props): JSX.Element {
 
   return (
     <View style={[{
@@ -24,8 +33,8 @@ export default function GradientCircle ({style, size = circleSize}: Props): JSX.
           height: size,
           borderRadius: size / 2,
         }}
-        colors={['#94dfe0','#07b8e9']}
-        stops={[0.3,1]}
+        colors={colors}
+        stops={stops}
       />
     </View>
   );
