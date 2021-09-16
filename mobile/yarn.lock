@@ -5511,6 +5511,11 @@ react-native-codegen@^0.0.7:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
+react-native-fast-image@^8.5.6:
+  version "8.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.5.6.tgz#3a4062b88bdaa9cf4fc7f7d8e1cd2ee9745d556f"
+  integrity sha512-fkgxxnuvhrrnJQGYDp7H6tk3B9+/V0MK6p6QSGRxlbuQrWqVKPCbikjCgbwmzLDptV0DFlGPtnTkSiRoSqMn0A==
+
 react-native-gesture-handler@^1.10.3:
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
@@ -5521,6 +5526,11 @@ react-native-gesture-handler@^1.10.3:
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-radial-gradient@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/react-native-radial-gradient/-/react-native-radial-gradient-1.0.9.tgz#de18106d4ba491f1ffb5e8bb9e17cb06ce2f4050"
+  integrity sha512-yGib/8t0Da35FYKOSuQf6fB02+OAjN55Dg93eN8ks35NreLHC0M+SZCJRjHlxO3zGE2E+m/90NJy0UZlSboCaQ==
 
 react-native-safe-area-context@^3.3.2:
   version "3.3.2"
