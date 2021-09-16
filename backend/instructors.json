@@ -1,0 +1,25 @@
+[{
+  "id": 0,
+  "name": "Sherman Poppen",
+  "photo": "https://i.ytimg.com/vi/k9a0HUTfC1M/maxresdefault.jpg",
+  "bio": "An engineer in Muskegon, Michigan, invented a toy for his daughters by fastening two skis together and attaching a rope to one end so he would have some control as they stood on the board and glided downhill.",
+  "slogan": "You should be the first!"
+}, {
+  "id": 1,
+  "name": "Tom Sims",
+  "photo": "https://www.gannett-cdn.com/presto/2020/01/02/USAT/41493361-84e0-40dd-b32a-cd6ae7b99000-VPC_ONE_YEAR_OLD_SNOWBOARDS_DESK_THUMB.jpg?crop=1911,1075,x0,y0&width=1280&height=720&format=pjpg&auto=webp",
+  "bio": "Sims crafted a snowboard in his school shop class by gluing carpet to the top of a piece of wood and attaching aluminum sheeting to the bottom.[7] He produced commercial snowboards in the mid-70s.",
+  "slogan": "You can manetize it!"
+}, {
+  "id": 2,
+  "name": "Jon Roberts",
+  "photo": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2016_05/955821/1-year-old-snow-baorder-today-160201-tease.jpg",
+  "bio": "Welsh skateboard enthusiast. With his friend developed their own snowboards to use at their local dry ski slope in 1976.",
+  "slogan": "You can even make your own snowboard!"
+}, {
+  "id": 3,
+  "name": "Pete Matthews",
+  "photo": "https://www.alpineaction.co.uk/blog/wp-content/uploads/2013/06/DSC_0333.jpg",
+  "bio": "Welsh skateboard enthusiast. With his friend developed their own snowboards to use at their local dry ski slope in 1976",
+  "slogan": "You can even make your own slope!"
+}]
