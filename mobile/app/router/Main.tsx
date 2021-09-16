@@ -2,7 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 /* screens */
-import InstructorsList from '../screens/InstructorsList/InstructorsList';
+import InstructorsList from '@screens/InstructorsList/InstructorsList';
+import InstructorProfile from '@screens/InstructorProfile/InstructorProfile';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,10 @@ export default function MainNavigationStack () {
         name='InstructorsList'
         component={InstructorsList}
       />
-      {/* <Stack.Screen name='InstructorProfile' component={null}/> */}
+      <Stack.Screen
+        name='InstructorProfile'
+        component={InstructorProfile}
+      />
       {/* <Stack.Screen name='Profile' component={null}/> */}
     </Stack.Navigator>
   );

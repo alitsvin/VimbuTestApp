@@ -2,30 +2,44 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 /* components */
-import {View, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Image from 'react-native-fast-image';
 
-/* types */
-import {Instructor} from '@types';
+/* hooks */
+import {useNavigation} from '@react-navigation/native';
 
 /* ui */
 import {colors, SCREEN_WIDTH} from '@ui';
+
+/* types */
+import {Instructor} from '@types';
 
 interface CarouselProps {
   data: Array<Instructor>;
 };
 
 interface CardProps {
-  item: Instructor;
+  instructor: Instructor;
+  onPress: () => void;
 };
 
 export default function InstructorsCarousel ({data}: CarouselProps): JSX.Element {
+  const {navigate} = useNavigation();
+
+  const openInstructorProfile = (instructor: Instructor): void => {
+    navigate('InstructorProfile', {instructorId: instructor.id});
+  }
 
   return (
     <Carousel
       data={data}
-      renderItem={renderInstructor}
+      renderItem={({item}) => (
+        <InstructorCard
+          onPress={() => openInstructorProfile(item)}
+          instructor={item}
+        />
+      )}
       sliderWidth={SCREEN_WIDTH}
       itemWidth={cardSize}
       inactiveSlideScale={0.7}
@@ -37,13 +51,17 @@ export default function InstructorsCarousel ({data}: CarouselProps): JSX.Element
 }
 
 const maxBioLength = 90;
-function renderInstructor ({item: instructor}: CardProps): JSX.Element {
+function InstructorCard ({instructor, onPress}: CardProps): JSX.Element {
+
   const shortenedBio = instructor.bio.length > maxBioLength
     ? instructor.bio.slice(0, maxBioLength).trim() + '...'
     : instructor.bio;
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.card}
+    >
       <Image
         style={styles.cardImage}
         source={{uri: instructor.photo}}
@@ -54,7 +72,7 @@ function renderInstructor ({item: instructor}: CardProps): JSX.Element {
         { shortenedBio }
         <Text style={styles.showMoreLink}>Show More</Text>
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
