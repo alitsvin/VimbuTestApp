@@ -38,6 +38,7 @@ export default function InstructorsCarousel ({data}: CarouselProps): JSX.Element
         <InstructorCard
           onPress={() => openInstructorProfile(item)}
           instructor={item}
+          key={item.id}
         />
       )}
       sliderWidth={SCREEN_WIDTH}
@@ -61,6 +62,7 @@ function InstructorCard ({instructor, onPress}: CardProps): JSX.Element {
     <TouchableOpacity
       onPress={onPress}
       style={styles.card}
+      activeOpacity={0.9}
     >
       <Image
         style={styles.cardImage}
