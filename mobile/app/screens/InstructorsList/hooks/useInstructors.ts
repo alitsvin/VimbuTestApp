@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react';
+import {useLoading} from '@hooks';
+
+import API from '@services/APIService';
 
 import {Instructor} from '@types';
 
@@ -10,26 +13,21 @@ type Output = [
 
 export function useInstructors () {
   const [instructors, setInstructors] = useState<Array<Instructor>>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, withLoading] = useLoading(false);
   const [error, setError] = useState<null|string>(null);
 
   useEffect(() => {
-    (async function fetchData () {
-      setLoading(true);
+    withLoading(async function fetchData () {
       try {
-        const response = await fetch('http://localhost:3000/instructors');
-        const data = await response.json();
-        console.log(data);
+        const data = await API.get('/instructors');
         setInstructors(data);
 
       } catch (e) {
-        console.log('error', e);
+        console.warn('Failed to load instructors', e);
         setError(e.message || e);
         setInstructors([]);
       }
-
-      setLoading(false);
-    })();
+    });
   }, []);
 
   return [
