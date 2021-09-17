@@ -24,7 +24,7 @@ export default function BookButton (): JSX.Element {
       activeOpacity={0.7}
     >
       <Text style={styles.buttonText}>
-        Book Lesson 75€
+        Book a Lesson
       </Text>
     </TouchableOpacity>
   );
