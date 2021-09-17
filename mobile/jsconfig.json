@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "commonjs",
+    "paths": {
+      "@app": ["./app"],
+          
+      "@components": ["./app/components"],
+      "@screens": ["./app/screens"],
+      "@router": ["./app/router"],
+      "@utils": ["./app/utils"],
+      "@services": ["./app/services"],
+      "@hooks": ["./app/hooks"],
+      "@types": ["./app/types"],
+      "@ui": ["./app/ui"],
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
