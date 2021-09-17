@@ -5,6 +5,8 @@ import {StyleSheet} from 'react-native';
 import {View, Text, TouchableOpacity} from 'react-native';
 import InstructorsCarousel from './components/InstructorsCarousel';
 import GradientCircle from './components/GradientBackground';
+import {BookButton} from '@components';
+import LessonInfo from './components/LessonInfo';
 
 /* hooks */
 import {useInstructors} from './hooks/useInstructors';
@@ -29,6 +31,8 @@ export default function InstructorsList (): JSX.Element {
       ) : (
         <Text>There are no any available instructors for now :(</Text>
       )}
+
+      <LessonInfo/>
 
       <BottomContainer/>
 
@@ -56,14 +60,7 @@ function Title (): JSX.Element {
 function BottomContainer (): JSX.Element {
   return (
     <View style={styles.bottomContainer}>
-      <TouchableOpacity
-        style={styles.bottomButton}
-        activeOpacity={0.7}
-      >
-        <Text style={styles.bottomButtonText}>
-          Book Lesson 75€
-        </Text>
-      </TouchableOpacity>
+      <BookButton/>
     </View>
   );
 }
@@ -98,19 +95,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-  },
-  bottomButton: {
-    backgroundColor: colors.buttonBlue,
-    borderRadius: 7,
-    width: 300,
-    paddingVertical: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  bottomButtonText: {
-    color: colors.textLight,
-    fontSize: 21,
-
   },
   backgroundCircle: {
     position: 'absolute',
