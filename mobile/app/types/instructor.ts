@@ -4,5 +4,6 @@ export interface Instructor {
   photo: string;
   bio: string;
   slogan: string;
+  rating: number;
   schedule: any;
 };
