@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 /* components */
 import {Text, TouchableOpacity} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import Image from 'react-native-fast-image';
+import {AvatarImage} from '@components';
 
 /* hooks */
 import {useNavigation} from '@react-navigation/native';
@@ -64,10 +64,9 @@ function InstructorCard ({instructor, onPress}: CardProps): JSX.Element {
       style={styles.card}
       activeOpacity={0.9}
     >
-      <Image
-        style={styles.cardImage}
-        source={{uri: instructor.photo}}
-        resizeMode={Image.resizeMode.cover}
+      <AvatarImage
+        src={{uri: instructor.photo}}
+        size={95}
       />
       <Text style={styles.cardTitle}>{ instructor.name.toUpperCase() }</Text>
       <Text style={styles.cardBio}>
@@ -78,9 +77,7 @@ function InstructorCard ({instructor, onPress}: CardProps): JSX.Element {
   );
 }
 
-
 const cardSize = 250;
-const photoSize = 95;
 
 const styles = StyleSheet.create({
   carousel: {
@@ -104,13 +101,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 15,
-  },
-  cardImage: {
-    width: photoSize,
-    height: photoSize,
-    borderRadius: photoSize / 2,
-    borderWidth: 3,
-    borderColor: colors.buttonBlue,
   },
   cardTitle: {
     color: colors.textDarkGray,
