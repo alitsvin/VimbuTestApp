@@ -8,10 +8,10 @@ import Image from 'react-native-fast-image';
 import {colors} from '@ui';
 
 /* types */
-import {ImageStyle} from 'react-native-fast-image';
+import {ImageStyle, Source} from 'react-native-fast-image';
 
 interface AvatarImageProps {
-  src: {uri: string};
+  src: Source;
   style?: ImageStyle;
   size?: number;
 };
