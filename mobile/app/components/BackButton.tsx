@@ -34,6 +34,7 @@ export default function BackButton ({onBack, style, icon = 'chevron'}: Props): J
     <TouchableOpacity
       onPress={goBack}
       style={[styles.mainContainer, style]}
+      hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
     >
       <Icon
         name={icon === 'arrow' ? 'arrow-left' : 'chevron-left'}
