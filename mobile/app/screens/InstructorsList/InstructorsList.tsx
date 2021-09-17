@@ -6,6 +6,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import InstructorsCarousel from './components/InstructorsCarousel';
 import GradientCircle from './components/GradientBackground';
 import {BookButton} from '@components';
+import LessonInfo from './components/LessonInfo';
 
 /* hooks */
 import {useInstructors} from './hooks/useInstructors';
@@ -30,6 +31,8 @@ export default function InstructorsList (): JSX.Element {
       ) : (
         <Text>There are no any available instructors for now :(</Text>
       )}
+
+      <LessonInfo/>
 
       <BottomContainer/>
 
