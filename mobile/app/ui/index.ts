@@ -13,11 +13,3 @@ export const colors = {
   textLight: '#ffffff',
   textLightGreen: '#80F2a2',
 };
-
-// TODO:
-// . Add instructors profile
-// . Add services
-// . Add loading to instructors list
-// . add error to instructors list
-// . Add welcome screen
-// . add saving user
